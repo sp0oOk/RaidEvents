@@ -1,0 +1,19 @@
+name: RaidEvents
+version: '1.0-SNAPSHOT'
+main: me.spook.raidevents.RaidEvents
+description: A plugin that allows for raiding events to be created and managed.
+api-version: '1.8.8'
+softdepend: [ PlaceholderAPI ]
+depend: [ MassiveCore, Factions ]
+author: spook
+permissions:
+  raidevents.debug: { description: debug command, default: false }
+  raidevents.*:
+    children:
+      raidevents.basecommand: true
+      raidevents.debug: true
+      raidevents.teleport: true
+  raidevents.kit.op:
+    default: op
+    children:
+      raidevents.*: true
